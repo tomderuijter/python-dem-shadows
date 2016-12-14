@@ -1,5 +1,5 @@
-# python-dem-raycast
-A library for casting solar shadows on digital elevation models.
+# python-dem-shadows
+A library for projecting solar shadows on digital elevation models.
 
 ![Raycasting on SRTM3](https://github.com/tomderuijter/python-dem-raycast/blob/master/raycast_shade.gif "Raycasting on a tile of the SRTM3 dataset.")
 
