@@ -2,7 +2,7 @@ import numpy as np
 import sys
 
 
-def raycast(dem, sun_vector, dl):
+def project_shadows(dem, sun_vector, dl):
     """Cast shadows on the DEM from a given sun position."""
 
     inverse_sun_vector = _invert_sun_vector(sun_vector)

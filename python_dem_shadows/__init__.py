@@ -5,7 +5,7 @@ from .gradient import (
     normal_vector,
     hill_shade
 )
-from .raycast import raycast
+from .shadows import project_shadows
 from .solar import (
     to_juliandate,
     sun_vector,
