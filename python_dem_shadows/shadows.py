@@ -2,8 +2,11 @@ import numpy as np
 import sys
 
 
-def project_shadows(dem, sun_vector, dl):
+def project_shadows(dem, sun_vector, dx, dy=None):
     """Cast shadows on the DEM from a given sun position."""
+
+    if dy is None:
+        dy = dx
 
     inverse_sun_vector = _invert_sun_vector(sun_vector)
     normal_sun_vector = _normalize_sun_vector(sun_vector)
@@ -30,13 +33,13 @@ def project_shadows(dem, sun_vector, dl):
     # Project West-East
     row = start_row
     for col in range(cols):
-        _cast_shadow(row, col, rows, cols, dl, in_sun, inverse_sun_vector,
+        _cast_shadow(row, col, rows, cols, dx, in_sun, inverse_sun_vector,
                      normal_sun_vector, z)
 
     # Project North-South
     col = start_col
     for row in range(rows):
-        _cast_shadow(row, col, rows, cols, dl, in_sun, inverse_sun_vector,
+        _cast_shadow(row, col, rows, cols, dy, in_sun, inverse_sun_vector,
                      normal_sun_vector, z)
     return in_sun.T
 
